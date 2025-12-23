@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kashif - Full-Stack Engineer | Web & Mobile Development",
+  title: "Altaf - Full-Stack Engineer | Web & Mobile Development",
   description:
     "Full-Stack Engineer specializing in React, Next.js, React Native, and DevOps. Building scalable web and mobile applications with modern technologies. Based in Lahore, Pakistan.",
   keywords: [
@@ -33,19 +33,19 @@ export const metadata: Metadata = {
     "Web Development",
     "Mobile App Development",
   ],
-  authors: [{ name: "Kashif", url: "https://github.com/codewithkashi" }],
-  creator: "Kashif",
+  authors: [{ name: "Altaf", url: "https://github.com/codewithkashi" }],
+  creator: "Altaf",
   openGraph: {
     type: "website",
     locale: "en_US",
-    title: "Kashif - Full-Stack Engineer",
+    title: "Altaf - Full-Stack Engineer",
     description:
       "Full-Stack Engineer specializing in building scalable web and mobile applications",
-    siteName: "Kashif Portfolio",
+    siteName: "Altaf Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kashif - Full-Stack Engineer",
+    title: "Altaf - Full-Stack Engineer",
     description:
       "Full-Stack Engineer specializing in building scalable web and mobile applications",
   },

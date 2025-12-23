@@ -106,7 +106,7 @@ export default function PortfolioPage() {
                     </p>
                     <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
                       <AnimatedShinyText className="inline-block">
-                        M. Kashif
+                        M. Altaf
                       </AnimatedShinyText>
                     </h1>
                   </div>
@@ -220,8 +220,8 @@ export default function PortfolioPage() {
                     >
                       <a
                         target="_blank"
-                        href="/Kashif_Resume.pdf"
-                        download="Kashif_Resume.pdf"
+                        href="/Altaf_Resume.pdf"
+                        download="Altaf_Resume.pdf"
                         className="flex items-center gap-2"
                       >
                         <FileText className="w-4 h-4" />
@@ -517,7 +517,7 @@ export default function PortfolioPage() {
             </DraggableCardContainer>
 
             {/* View All Projects Button */}
-            <BlurFade delay={0.7} inView>
+            {/* <BlurFade delay={0.7} inView>
               <div className="flex justify-center mt-12">
                 <a href="/projects">
                   <InteractiveHoverButton className="text-base">
@@ -525,7 +525,7 @@ export default function PortfolioPage() {
                   </InteractiveHoverButton>
                 </a>
               </div>
-            </BlurFade>
+            </BlurFade> */}
           </div>
         </section>
 

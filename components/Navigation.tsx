@@ -89,15 +89,15 @@ const Navigation = () => {
             >
               <div className="w-10 h-10 rounded-lg overflow-hidden shadow-lg">
                 <Image
-                  src="/logo.jpg"
-                  alt="Muhammad Kashif Logo"
+                  src="/logo.png"
+                  alt="Muhammad Altaf Logo"
                   width={40}
                   height={40}
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="hidden sm:block">
-                <h1 className="font-bold text-lg">Muhammad Kashif</h1>
+                <h1 className="font-bold text-lg">Muhammad Altaf</h1>
                 <p className="text-xs text-muted-foreground">
                   Full Stack Developer
                 </p>

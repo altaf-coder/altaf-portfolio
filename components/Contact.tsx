@@ -160,14 +160,14 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "codewithkashif318@gmail.com",
-      href: "mailto:codewithkashif318@gmail.com",
+      value: "akaltaf610@gmail.com",
+      href: "mailto:akaltaf610@gmail.com",
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+92 341 5634031",
-      href: "tel:+923415634031",
+      value: "+92 3471691551",
+      href: "tel:+923471691551",
     },
     {
       icon: MapPin,
@@ -181,19 +181,19 @@ const Contact = () => {
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com/codewithkashi",
+      href: "https://github.com/altaf-coder",
       color: "hover:text-foreground",
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://www.linkedin.com/in/codewithkashif/",
+      href: "https://www.linkedin.com/in/muhammad-altaf-35850738a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       color: "hover:text-blue-400",
     },
     {
       icon: Instagram,
       label: "Instagram",
-      href: "https://www.instagram.com/majestic.kashif/",
+      href: "https://www.instagram.com/dashing._.developer?igsh=MWU3dTdlb3N1NnU4OQ==",
       color: "hover:text-blue-400",
     },
   ];

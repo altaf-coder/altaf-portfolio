@@ -85,7 +85,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
     // Send email to yourself
     await sendMail({
-      to: "codewithkashif318@gmail.com", // Your email
+      to: "akaltaf610@gmail.com", // Your email
       subject: `Portfolio Contact: ${subject}`,
       html: htmlContent,
       base64: "",
@@ -121,13 +121,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             </p>
             <p style="font-size: 16px; line-height: 1.6; color: #333;">
               Best regards,<br>
-              <strong>Kashif</strong>
+              <strong>Altaf</strong>
             </p>
           </div>
           
           <div style="border-top: 1px solid #eee; padding-top: 20px; text-align: center;">
             <p style="color: #666; font-size: 14px; margin: 0;">
-              This is an automated confirmation email from codewithkashif318@gmail.com
+              This is an automated confirmation email from akaltaf610@gmail.com
             </p>
           </div>
         </div>

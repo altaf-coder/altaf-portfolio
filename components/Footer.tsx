@@ -17,18 +17,18 @@ const Footer = () => {
   const pathname = usePathname();
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com/codewithkashi", label: "GitHub" },
+    { icon: Github, href: "https://github.com/altaf-coder", label: "GitHub" },
     {
       icon: Linkedin,
-      href: "https://www.linkedin.com/in/codewithkashif/",
+      href: "https://www.linkedin.com/in/muhammad-altaf-35850738a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       label: "LinkedIn",
     },
     {
       icon: Instagram,
-      href: "https://www.instagram.com/majestic.kashif/",
+      href: "https://www.instagram.com/dashing._.developer?igsh=MWU3dTdlb3N1NnU4OQ==",
       label: "Instagram",
     },
-    { icon: Mail, href: "mailto:codewithkashif318@gmail.com", label: "Email" },
+    { icon: Mail, href: "mailto:akaltaf610@gmail.com", label: "Email" },
   ];
 
   const quickLinks = [
@@ -59,15 +59,15 @@ const Footer = () => {
             >
               <div className="w-12 h-12 rounded-lg overflow-hidden shadow-lg">
                 <Image
-                  src="/logo.jpg"
-                  alt="Muhammad Kashif Logo"
+                  src="/logo.png"
+                  alt="Muhammad Altaf"
                   width={48}
                   height={48}
                   className="w-full h-full object-cover"
                 />
               </div>
               <div>
-                <h3 className="font-bold text-xl">Muhammad Kashif</h3>
+                <h3 className="font-bold text-xl">Muhammad Altaf</h3>
                 <p className="text-sm text-muted-foreground">
                   Full Stack Developer
                 </p>
@@ -149,10 +149,10 @@ const Footer = () => {
               <div>
                 <p className="text-sm text-muted-foreground mb-1">Email</p>
                 <a
-                  href="mailto:codewithkashif318@gmail.com"
+                  href="mailto:akaltaf610@gmail.com"
                   className="text-sm hover:text-primary transition-colors"
                 >
-                  codewithkashif318@gmail.com
+                  akaltaf610@gmail.com
                 </a>
               </div>
               <div>
@@ -178,7 +178,7 @@ const Footer = () => {
         >
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <span>
-              Copyright © 2025. All rights reserved by Muhammad Kashif.
+              Copyright © 2025. All rights reserved by Muhammad Altaf.
             </span>
           </div>
         </motion.div>
