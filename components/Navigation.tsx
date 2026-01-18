@@ -181,7 +181,7 @@ const Navigation = () => {
           className="md:hidden overflow-hidden glass-strong border-t border-border/50 bg-black/50"
         >
           <div className="px-6 py-4 space-y-4">
-            {navItems.map((item, index) => (
+            {navItems.map((item,index) => (
               <motion.button
                 key={item.label}
                 initial={{ opacity: 0, x: -20 }}
