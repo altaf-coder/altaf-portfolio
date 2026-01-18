@@ -65,7 +65,7 @@ export default function PortfolioPage() {
 
       {/* Theme Toggle - Fixed Position */}
       <div className="fixed top-6 right-6 z-50">
-        <AnimatedThemeToggler />
+        {/* <AnimatedThemeToggler /> */}
       </div>
 
       <main className="relative min-h-screen overflow-x-hidden">

@@ -12,8 +12,8 @@ import {
   Globe,
 } from "lucide-react";
 const stats = [
-  { label: "Years Experience", value: "1+", icon: Award },
-  { label: "Projects Completed", value: "5+", icon: Code },
+  { label: "Years Experience", value: "1.2+", icon: Award },
+  { label: "Projects Completed", value: "6+", icon: Code },
   // { label: "Mobile Apps", value: "10+", icon: Smartphone },
   // { label: "Cloud Deployments", value: "15+", icon: Cloud },
 ];

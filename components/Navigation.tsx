@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
+import { AnimatedThemeToggler } from "./ui/animated-theme-toggler"; 
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -139,6 +140,7 @@ const Navigation = () => {
             {/* Right side actions */}
             <div className="flex items-center gap-4">
               {/* Theme toggle */}
+              <AnimatedThemeToggler className="mr-2 sm:mr-0" />
 
               {/* Hire Me Button */}
               <Button
@@ -176,7 +178,7 @@ const Navigation = () => {
             height: isMobileMenuOpen ? "auto" : 0,
           }}
           transition={{ duration: 0.3 }}
-          className="md:hidden overflow-hidden glass-strong border-t border-border/50"
+          className="md:hidden overflow-hidden glass-strong border-t border-border/50 bg-black/50"
         >
           <div className="px-6 py-4 space-y-4">
             {navItems.map((item, index) => (
