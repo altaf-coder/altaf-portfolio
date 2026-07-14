@@ -210,7 +210,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative min-h-screen flex items-center justify-center py-24 px-4 lg:px-8 overflow-hidden"
+      className="relative flex min-h-0 items-center justify-center py-16 sm:min-h-screen sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
     >
       {/* Background elements */}
       <div className="absolute inset-0 tech-grid opacity-10" />
@@ -223,19 +223,19 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <AnimatedShinyText className="text-4xl md:text-5xl font-bold mb-6">
+          <AnimatedShinyText className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 px-2">
             Let's Build Something Amazing
           </AnimatedShinyText>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 max-w-[1600px] mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 max-w-[1600px] mx-auto">
           {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            <Card className="glass p-8">
+            <Card className="glass p-5 sm:p-8">
               <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}
@@ -426,7 +426,7 @@ const Contact = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="relative h-full min-h-[500px] flex items-center justify-center"
+            className="relative h-full min-h-[280px] sm:min-h-[400px] lg:min-h-[500px] flex items-center justify-center order-first lg:order-last"
           >
             <Globe />
           </motion.div>

@@ -12,8 +12,8 @@ import {
   Globe,
 } from "lucide-react";
 const stats = [
-  { label: "Years Experience", value: "1.2+", icon: Award },
-  { label: "Projects Completed", value: "6+", icon: Code },
+  { label: "Years Experience", value: "1.8+", icon: Award },
+  { label: "Projects Completed", value: "10+", icon: Code },
   // { label: "Mobile Apps", value: "10+", icon: Smartphone },
   // { label: "Cloud Deployments", value: "15+", icon: Cloud },
 ];
@@ -144,26 +144,36 @@ const experiences = [
 ];
 
 const projects = [
-  // {
-  //   title: "Qi Tech - Incident Reporting Tool",
-  //   description:
-  //     "Professional incident reporting system currently used by over 700 pharmacies in the UK including Well Pharmacy. NHS certified and production-ready solution for healthcare incident management and compliance.",
-  //   image: "/projects/qitech.png",
-  //   type: "Full Stack Web",
-  //   icon: Globe,
-  //   technologies: ["PHP", "Laravel", "MySQL", "JavaScript", "Bootstrap"],
-  //   features: [
-  //     "NHS Certification",
-  //     "700+ Active Pharmacies",
-  //     "Incident Tracking",
-  //     "Compliance Reports",
-  //   ],
-  //   github: "#",
-  //   demo: "#",
-  //   role: "Lead Backend Developer",
-  //   duration: "1 year",
-  //   category: "web",
-  // },
+  {
+    title: "Auoura — Commerce OS & Multi-tenant CRM",
+    description:
+      "Multi-tenant CRM + e-commerce platform for running online stores. Owners manage products (with variants), orders, customers, branches, inventory, coupons, CMS, analytics, and staff — plus a customer storefront with cart, checkout, and order tracking. Supports multi-branch stores, subscriptions, role-based access, and real-time notifications.",
+    image: "/projects/aroura.png",
+    type: "Full Stack Web",
+    icon: Globe,
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma",
+      "Stripe",
+      "Socket.io",
+      "NextAuth",
+    ],
+    features: [
+      "Multi-tenant Stores",
+      "Inventory & Branches",
+      "Stripe Billing",
+      "Real-time Notifications",
+    ],
+    github: "#",
+    demo: "#",
+    role: "Full Stack Developer",
+    duration: "Ongoing",
+    category: "web",
+    featured: true,
+  },
   {
     title: "Future Soul - Dating & Matchmaking App & Website",
     description:

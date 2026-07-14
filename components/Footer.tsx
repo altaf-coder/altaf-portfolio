@@ -39,7 +39,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative py-16 px-4 lg:px-8 mt-24 overflow-hidden">
+    <footer className="relative py-12 sm:py-16 px-4 sm:px-6 lg:px-8 mt-16 sm:mt-24 overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 tech-grid opacity-5" />
       <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
@@ -174,9 +174,9 @@ const Footer = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.6 }}
-          className="pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-4"
+          className="pt-6 sm:pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4 text-center md:text-left"
         >
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <div className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
             <span>
               Copyright © 2025. All rights reserved by Muhammad Altaf.
             </span>

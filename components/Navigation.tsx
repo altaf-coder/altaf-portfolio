@@ -5,20 +5,18 @@ import { useRouter, usePathname } from "next/navigation";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Menu, X, Sun, Moon } from "lucide-react";
-import { useTheme } from "next-themes";
-import { AnimatedThemeToggler } from "./ui/animated-theme-toggler"; 
+import { Menu, X } from "lucide-react";
+// import { AnimatedThemeToggler } from "./ui/animated-theme-toggler";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
-  const { theme, setTheme } = useTheme();
   const router = useRouter();
   const pathname = usePathname();
 
   const navItems = [
-    { label: "Home", href: "/#home" },
+    { label: "Home", href: "/#hero" },
     { label: "Skills", href: "/#skills" },
     { label: "Projects", href: "/#projects" },
     { label: "Experience", href: "/#experience" },
@@ -40,16 +38,12 @@ const Navigation = () => {
         return false;
       });
 
-      setActiveSection(current || "home");
+      setActiveSection(current || "hero");
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
 
   const scrollToSection = (href: string) => {
     // Check if we're on the home page
@@ -76,7 +70,7 @@ const Navigation = () => {
         transition={{ duration: 0.8 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? "glass backdrop-blur-xl border-b border-border/50"
+            ? "border-b border-border/50 bg-background/85 backdrop-blur-xl"
             : "bg-transparent"
         }`}
       >
@@ -86,7 +80,7 @@ const Navigation = () => {
             <motion.div
               whileHover={{ scale: 1.05 }}
               className="flex items-center gap-3 cursor-pointer"
-              onClick={() => scrollToSection("/#home")}
+              onClick={() => scrollToSection("/#hero")}
             >
               <div className="w-10 h-10 rounded-lg overflow-hidden shadow-lg">
                 <Image
@@ -139,8 +133,8 @@ const Navigation = () => {
 
             {/* Right side actions */}
             <div className="flex items-center gap-4">
-              {/* Theme toggle */}
-              <AnimatedThemeToggler className="mr-2 sm:mr-0" />
+              {/* Theme toggle — disabled for now; dark theme is forced */}
+              {/* <AnimatedThemeToggler className="mr-2 sm:mr-0" /> */}
 
               {/* Hire Me Button */}
               <Button
@@ -178,7 +172,7 @@ const Navigation = () => {
             height: isMobileMenuOpen ? "auto" : 0,
           }}
           transition={{ duration: 0.3 }}
-          className="md:hidden overflow-hidden glass-strong border-t border-border/50 bg-black/50"
+          className="md:hidden overflow-hidden border-t border-border/50 bg-background/95 backdrop-blur-xl"
         >
           <div className="px-6 py-4 space-y-4">
             {navItems.map((item,index) => (

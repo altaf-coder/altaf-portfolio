@@ -6,8 +6,10 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
+  --font-serif-accent: var(--font-accent), ui-serif, Georgia, serif;
+  --font-mono: var(--font-code), ui-monospace, monospace;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -226,6 +228,17 @@
       transform: translateY(calc(-100% - var(--gap)));
     }
   }
+  --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
+  @keyframes spotlight {
+    0% {
+      opacity: 0;
+      transform: translate(-72%, -62%) scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -40%) scale(1);
+    }
+  }
 }
 
 :root {
@@ -312,7 +325,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
   }
 }
 
@@ -324,6 +337,259 @@
         transparent 1px
       ),
       linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-serif-accent {
+    font-family: var(--font-serif-accent);
+  }
+
+  .hero-gradient-text {
+    background: linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #c4b5fd 35%,
+      #38bdf8 65%,
+      #ffffff 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: hero-text-shimmer 6s linear infinite;
+  }
+
+  .hero-outline-text {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.15);
+    color: transparent;
+  }
+
+  .glass,
+  .glass-panel {
+    background: color-mix(in srgb, var(--background) 88%, transparent);
+    border: 1px solid color-mix(in srgb, var(--foreground) 10%, transparent);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .dark .glass,
+  .dark .glass-panel {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* ── Tech stack playing-card deck ── */
+  .deck-stage {
+    perspective: 1400px;
+    perspective-origin: 50% 42%;
+  }
+
+  .deck-fan {
+    transform-style: preserve-3d;
+    width: var(--deck-card-w, 280px);
+    height: var(--deck-card-h, 415px);
+  }
+
+  .deck-card {
+    transform-style: preserve-3d;
+    width: var(--deck-card-w, 280px);
+    height: var(--deck-card-h, 415px);
+  }
+
+  .deck-flip {
+    transform-style: preserve-3d;
+    transform-origin: center center;
+  }
+
+  .deck-face {
+    position: absolute;
+    inset: 0;
+    border-radius: 22px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .deck-face--back {
+    transform: rotateY(0deg);
+  }
+
+  .deck-face--front {
+    transform: rotateY(180deg);
+  }
+
+  .deck-back {
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 22px;
+    border: 1px solid color-mix(in srgb, var(--foreground) 14%, transparent);
+    background: linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--accent) 12%, var(--card)) 0%,
+      var(--muted) 45%,
+      color-mix(in srgb, var(--background) 90%, var(--card)) 100%
+    );
+    box-shadow:
+      inset 0 1px 0 color-mix(in srgb, var(--foreground) 8%, transparent),
+      0 24px 60px rgba(0, 0, 0, 0.12);
+  }
+
+  .dark .deck-back {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: linear-gradient(145deg, #1a1028 0%, #0d0d14 45%, #120a1e 100%);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 24px 60px rgba(0, 0, 0, 0.45);
+  }
+
+  .deck-back-frame {
+    position: absolute;
+    inset: 10px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.3);
+  }
+
+  .deck-back-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.35;
+    background-image:
+      radial-gradient(
+        circle at 50% 50%,
+        color-mix(in srgb, var(--accent) 35%, transparent) 0%,
+        transparent 55%
+      ),
+      repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.04) 0 2px,
+        transparent 2px 8px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        rgba(255, 255, 255, 0.03) 0 2px,
+        transparent 2px 8px
+      );
+  }
+
+  .deck-back-emblem {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    height: 5.5rem;
+    width: 5.5rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: radial-gradient(
+      circle,
+      color-mix(in srgb, var(--accent) 25%, transparent) 0%,
+      rgba(0, 0, 0, 0.4) 70%
+    );
+    box-shadow: 0 0 40px color-mix(in srgb, var(--accent) 30%, transparent);
+  }
+
+  .deck-back-suit-lg {
+    font-size: 2.75rem;
+    line-height: 1;
+    text-shadow: 0 0 20px currentColor;
+  }
+
+  .deck-surface {
+    height: 100%;
+    width: 100%;
+    border: 1px solid color-mix(in srgb, var(--foreground) 12%, transparent);
+    background: linear-gradient(
+      160deg,
+      color-mix(in srgb, var(--accent) 10%, var(--card)) 0%,
+      var(--card) 55%,
+      color-mix(in srgb, var(--background) 92%, var(--card)) 100%
+    );
+    box-shadow:
+      inset 0 1px 0 color-mix(in srgb, var(--foreground) 8%, transparent),
+      0 20px 50px rgba(0, 0, 0, 0.18);
+  }
+
+  .dark .deck-surface {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(
+      160deg,
+      color-mix(in srgb, var(--accent) 8%, rgba(14, 14, 20, 0.95)) 0%,
+      rgba(10, 10, 16, 0.98) 55%,
+      rgba(8, 8, 12, 1) 100%
+    );
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.06),
+      0 28px 70px rgba(0, 0, 0, 0.5);
+  }
+
+  @media (max-width: 767px) {
+    .deck-fan[data-mobile="true"] .deck-card {
+      max-width: 100%;
+    }
+
+    .deck-fan[data-mobile="true"] .deck-title {
+      white-space: normal;
+      overflow: visible;
+      text-overflow: unset;
+    }
+  }
+
+  .deck-glow {
+    pointer-events: none;
+    position: absolute;
+    inset: -30% -20% auto;
+    height: 55%;
+    background: radial-gradient(
+      ellipse at 50% 0%,
+      color-mix(in srgb, var(--accent) 35%, transparent) 0%,
+      transparent 70%
+    );
+    opacity: 0.7;
+    transition: opacity 0.4s ease;
+  }
+
+  .deck-card[data-active="true"] {
+    z-index: 20;
+  }
+
+  .deck-card[data-active="true"] .deck-glow {
+    opacity: 1;
+  }
+
+  .deck-card[data-active="true"] .deck-title {
+    color: var(--accent);
+  }
+
+  .deck-chip {
+    opacity: 0;
+    transform: translateY(6px) scale(0.96);
+    transition:
+      opacity 0.35s ease,
+      transform 0.35s ease;
+    transition-delay: calc(var(--i, 0) * 45ms);
+  }
+
+  .deck-card[data-active="true"] .deck-chip {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes hero-text-shimmer {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
   }
 }
 
@@ -353,6 +619,40 @@
 
 .vertical-timeline-element {
   margin: 2rem 0 !important;
+}
+
+/* Mobile / tablet timeline — single column, left rail */
+@media only screen and (max-width: 1169px) {
+  .vertical-timeline {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .vertical-timeline::before {
+    left: 18px !important;
+    transform: none !important;
+    width: 3px !important;
+  }
+
+  .vertical-timeline-element-icon {
+    left: 18px !important;
+    width: 36px !important;
+    height: 36px !important;
+    margin-left: 0 !important;
+  }
+
+  .vertical-timeline-element-content {
+    width: calc(100% - 3.75rem) !important;
+    max-width: none !important;
+    float: none !important;
+    margin-left: 3.75rem !important;
+    margin-right: 0 !important;
+  }
+
+  .vertical-timeline-element {
+    margin: 1.25rem 0 !important;
+  }
 }
 
 /* Desktop: Make cards wider on both sides */
